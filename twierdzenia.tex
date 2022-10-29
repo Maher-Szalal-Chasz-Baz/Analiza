@@ -1,0 +1,162 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry} \geometry{margin=90pt}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%%%
+%   KOMENDY   %
+%%%%%%%%%%%%%%%
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\li}{\lim_{n\to\infty}}
+\newcommand{\lis}{\limsup_{n\to\infty}}
+\newcommand{\lii}{\liminf_{n\to\infty}}
+\DeclarePairedDelimiter\set\{\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   TWIERDZENIA, LEMATY I DEFINICJE   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem*{arch}{Aksjomat Archimedesa}
+\newtheorem*{przenik}{Twierdzenie o przenikających się ciągach}
+\newtheorem*{fekete}{Lemat subaddytywny Fekete}
+\newtheorem{lemma}{Lemat}
+\newtheorem*{wn}{Wniosek}
+\newtheorem*{definition}{Definicja}
+\newtheorem{theorem}{Twierdzenie}
+
+%%%%%%%%%%%%%%%%%
+\begin{document}%
+%%%%%%%%%%%%%%%%%    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                            \section{Ćwiczenia 7.10.2022}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{arch} %Archimedes
+Dla każdej liczby rzeczywistej $a$ istnieje liczba naturalna $n$ taka, że $n>a$.
+    \begin{equation*}
+        \forall_{a\in\R}\exists_{n\in\N}\enspace n>a
+    \end{equation*}
+\end{arch}
+
+\begin{lemma} %Supremum
+Niech $A\subseteq\R$ będzie zbiorem ograniczonym z góry, a M pewnym ograniczeniem górnym zbioru A.
+Wówczas równoważne są zdania:
+    \begin{enumerate}[label=(\roman*)]
+        \item $M=\sup{A}$;
+        \item $\forall_{\varepsilon>0}\exists_{a\in A}\enspace a>M-\varepsilon$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{lemma} %Infimum
+Niech $A\subseteq\R$ będzie zbiorem ograniczonym z dołu, a m pewnym ograniczeniem dolnym zbioru A.
+Wówczas równoważne są zdania:
+    \begin{enumerate}[label=(\roman*)]
+        \item $m=\inf{A}$;
+        \item $\forall_{\varepsilon>0}\exists_{a\in A}\enspace a<m+\varepsilon$.
+    \end{enumerate}
+\end{lemma}
+
+\noindent \textbf{Wnioski.}
+    \begin{enumerate}[label=(\Roman*)]
+        \item Jeśli $0<a<b$. to istnieje $n\in\N$ takie, że $n\cdot a>b$.
+        \item Jeśli $x_1<x_2$, to istnieją $\varepsilon_1,\varepsilon_2>0$ takie, że $(x_1-\varepsilon_1,x_1+\varepsilon_1)\cap(x_2-\varepsilon_2,x_2+\varepsilon_2)=\emptyset$
+        \item $\forall_{h>0,a\in\R}\exists_{k\in\N} \enspace (k-1)h\le a<kh$
+        \item $\forall_{a<b}\forall_{a,b\in\R}\exists_{c\in\R}\exists_{c'\in\R\setminus\Q} \enspace c,c'\in(a,b)$
+    \end{enumerate}
+
+\begin{lemma} %supremum sumy i supremum różnicy
+    Dla dowolnych podzbiorów $A,B \subseteq\R$ mamy
+        \begin{enumerate}[label=(\alph*)]
+            \item $\sup{(A+B)}=\sup{A}+\sup{B}$,
+            \item $\sup{(A-B)}=\sup{A}-\inf{B}$.
+        \end{enumerate}
+\end{lemma}
+
+\begin{lemma} %supremum -A
+    Dla niepustego podzbioru $A\subseteq$ mamy $\sup{(-A)}=-\inf{A}$
+\end{lemma}
+
+\begin{definition} %Ciąg zstępujący
+O ciągu zbiorów $A_1, A_2,\ldots$ mówimy, że jest zstępujący, jeśli $A_1\supseteq a_2 \supseteq \ldots$
+\end{definition}
+
+
+\begin{theorem} %Cantor
+    Jeśli $I_1, I_2, \ldots$ jest ciągiem zstępujących przedziałów domnkniętych prostej rzeczywistej
+    to $\bigcap_{n\in\N}A_n\ne\emptyset$.
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                            \section{Ćwiczenia 21.10}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lemma}
+    Dane są dwa ciągi $(x_n)$, $(y_n)$. Jeśli $(y_n)$ jest ograniczony oraz $x_n\to 0$, wówczas
+    $x_n y_n \to 0$.
+\end{lemma}
+
+\begin{theorem}
+    Jeśli $a_n\to g$, to $A(a_1,a_2,\ldots,a_n)=\frac{a_1+a_2+\ldots+a_n}{n}\to g$.
+    \end{theorem}    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                            \section{Ćwiczenia 25.10}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{przenik}
+Niech dane będą trzy ciągi liczb rzeczywistych $(x_n), (y_n)$ oraz $(c_n)$. Jeśli $x_n\to x$ i 
+$y_n\to y$ oraz $c_n=\frac{x_1y_n+\ldots+x_ny_1}{n}$, wówczas $c_n\to xy$.
+\end{przenik}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                            \section{Ćwiczenia 28.10.2022}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lemma} %Zbiór podciągów zbieżnych
+Niech $S=\set{\lim_{n\to\infty}x_n:(x_{n_k})-\text{podciąg zbieżny, ciągu $(x_n)$, do granicy 
+skończonej lub nie}}$. Jeśli $+\infty,-\infty\notin S$, to zbiór S jest ograniczony, więc zawiera 
+podciąg zbieżny, zatem $S\ne \emptyset$.
+\end{lemma}
+
+\begin{lemma} %Gdy -infty i +infty nie należą do S
+Przyjmując oznaczenia jak powyżej:
+    \begin{enumerate}[label=(\alph*)]
+        \item Jeśli $-\infty\notin S$, to $\inf S\in\R$ lub $\inf S=+\infty$,
+        \item Jeśli $+\infty\notin S$, to $\sup S\in\R$ lub $\sup S=-\infty$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{lemma} %ciąg ograniczony i sup S, inf S
+    Jeśli $(a_n)$ jest ograniczony z góry/dołu, to $\sup S/\inf S\in S$.    
+\end{lemma}
+
+\begin{definition} %granica górna i dolna
+    \begin{flalign*}
+        \text{Granicą górną nazywamy ciągu $(x_n)$}\enspace \lis{x_n}\stackrel{def}{=}\sup{S}.\quad
+        \text{Granicą dolną nazywam ciągu $(x_n)$}\enspace \lii{x_n}\stackrel{def}{=}\inf{S}.
+    \end{flalign*}
+\end{definition}
+
+\begin{fekete} %Fekete
+Jeśli ciąg $(x_n)$ spełnia warunek: $x_{n+m}\le x_n+x_m,$
+to istnieje granica $\li\frac{x_n}{n}$ i co więcej
+    \begin{equation*}
+        \li\frac{x_n}{n}=\inf\set{\frac{x_n}{n},n\in\N}.
+    \end{equation*}
+\end{fekete}
+
+%%%%%%%%%%%%%%%
+\end{document}%
+%%%%%%%%%%%%%%%
