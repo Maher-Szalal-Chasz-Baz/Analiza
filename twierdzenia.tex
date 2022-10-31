@@ -28,6 +28,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newtheorem*{arch}{Aksjomat Archimedesa}
+\newtheorem*{sred}{Nierówności między średnimi}
 \newtheorem*{przenik}{Twierdzenie o przenikających się ciągach}
 \newtheorem*{fekete}{Lemat subaddytywny Fekete}
 \newtheorem{lemma}{Lemat}
@@ -68,7 +69,7 @@ Wówczas równoważne są zdania:
     \end{enumerate}
 \end{lemma}
 
-\noindent \textbf{Wnioski.}
+\noindent \textbf{Wnioski.} %Wnioski do tego co wyżej 
     \begin{enumerate}[label=(\Roman*)]
         \item Jeśli $0<a<b$. to istnieje $n\in\N$ takie, że $n\cdot a>b$.
         \item Jeśli $x_1<x_2$, to istnieją $\varepsilon_1,\varepsilon_2>0$ takie, że $(x_1-\varepsilon_1,x_1+\varepsilon_1)\cap(x_2-\varepsilon_2,x_2+\varepsilon_2)=\emptyset$
@@ -99,26 +100,118 @@ O ciągu zbiorów $A_1, A_2,\ldots$ mówimy, że jest zstępujący, jeśli $A_1\
 \end{theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                                            \section{Ćwiczenia 21.10}
+                                            \section{Ćwiczenia 11.10.2022}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{lemma}
+\begin{theorem} %Ciąg zbieżny do ograniczenia, supA
+    Załóżmy, że $a$ jest ograniczeniem górnym zbioru $A$. Jeśli istnieje ciąg $a_n\in A$
+    taki, że $a_n\to a$, wówczas $a=\sup{A}$.
+\end{theorem}
+
+\begin{lemma} %Sup i inf sumy uogólnionej 
+    Niech $A=\bigcup^{\infty}_{k=1}A_k$, $\alpha_k=\sup{A_k}$, $\beta_k=\inf{A_k}$ i 
+    załóżmy, że $\alpha_k,\beta_k\in\R$, wówczas
+        \begin{equation*}
+            \sup{A}=\sup{\set{\alpha_1,\alpha_2,\ldots}},\quad\inf{A}=\inf{\set{\beta_1,\beta_2,\ldots}}.
+        \end{equation*}
+\end{lemma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                            \section{Ćwiczenia 14.10.2022}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lemma} %Supremum A\cdot B
+    Niech dane będą zbiory $A, B\subseteq\R$, $A\cdot B=\set{a\cdot b:a\in A,b\in B}$,
+    wtedy $\sup{(A\cdot B)}=\max{\set{\sup{A}\sup{B},\sup{A}\inf{B},\inf{A}\sup{B},
+    \inf{A}\inf{B}}}$.
+\end{lemma}
+
+\begin{lemma} %Suma liczb dodatnich, których iloczynem jest jedynka
+    Jeśli $x_1,x_2,\ldots,x_n$ są liczbami dodatnimi oraz $x_1x_2\cdots x_n=1$, to
+    \begin{equation*}
+        x_1+x_2+\cdots+x_n\ge n.
+    \end{equation*}
+\end{lemma}
+
+\begin{sred} %Nierówności między średnimi
+    \begin{align*}
+        H(x_1,\ldots,x_n)=\frac{n}{\frac{1}{x_1}+\cdots+\frac{1}{x_n}} - \text{średnia harmoniczna}\\
+        G(x_1,\ldots,x_n)=\sqrt[n]{x_1\cdots x_n} - \text{średnia geometryczna}\\
+        A(x_1,\ldots,x_n)=\frac{x_1+\cdots+x_n}{n} - \text{średnia arytmetyczna}\\
+        K(x_1,\ldots,x_n)=\sqrt{\frac{x_1^2+\cdots+x_n^2}{n}} - \text{średnia kwadratowa}
+    \end{align*}
+    Jeśli $x_1,\ldots,x_n$ są liczbami nieujemnymi, to 
+    \begin{equation*}
+        \min{\set{x_1,\ldots,x_n}}\le H(x_1,\ldots,x_n)\le G(x_1,\ldots,x_n)\le
+        A(x_1,\ldots,x_n)\le K(x_1,\ldots,x_n)\le \max{\set{x_1,\ldots,x_n}}.
+    \end{equation*}
+\end{sred}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                            \section{Ćwiczenia 18.10.2022}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{theorem} %Granica an i sup, inf zbioru jego wyrazów
+    Niech $(a_n)$ będzie ciągiem liczb rzeczywistych.
+    \begin{enumerate}[label=(\alph*)]
+        \item Jeśli ciąg $(a_n)$ jest rosnący, wówczas $\li{a_n}=\sup{\set{a_1,a_2,\ldots}}$.
+        \item Jeśli ciąg $(a_n)$ jest malejący, wówczas $\li{a_n}=\inf{\set{a_1,a_2,\ldots}}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{lemma} %nierówność z pierwiastkiem z n
+    Dla dowolnej liczby naturalnej $n\in\N$ mamy
+    \begin{equation*}
+        \sqrt{n}<1+\frac{1}{\sqrt{2}}+\cdots+\frac{1}{\sqrt{n}}.
+    \end{equation*}
+\end{lemma}
+
+\begin{lemma} %silnia do kwadratu, nierówność
+    Dla dowolnej liczby naturalnej $n\in\N$, $n\ge 7$ mamy
+    \begin{equation*}
+        (n!)^2\ge n^{n+1}.
+    \end{equation*}
+\end{lemma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                            \section{Ćwiczenia 21.10.2022}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lemma} %Iloczyn ciągu ograniczonego i zbieżnego do zera
     Dane są dwa ciągi $(x_n)$, $(y_n)$. Jeśli $(y_n)$ jest ograniczony oraz $x_n\to 0$, wówczas
     $x_n y_n \to 0$.
 \end{lemma}
 
-\begin{theorem}
+\begin{theorem} %Granica średniej arytmetycznej 
     Jeśli $a_n\to g$, to $A(a_1,a_2,\ldots,a_n)=\frac{a_1+a_2+\ldots+a_n}{n}\to g$.
-    \end{theorem}    
+\end{theorem}    
+
+\begin{lemma} %Granica ciągu [ma]/n
+    Niech a będzie dowolną liczbą rzeczywistą i $n\in\N$, wówczas
+    \begin{equation*}
+        \li{\frac{[na]}{n}}=a.
+    \end{equation*}
+\end{lemma}
+
+\begin{lemma} %Granica n^a/a^n
+    Dla $a\ge1$ i $n\in\N$ mamy $\frac{n^a}{a^n}\to0$.
+\end{lemma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                                            \section{Ćwiczenia 25.10}
+                                            \section{Ćwiczenia 25.10.2022}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{przenik}
+\begin{przenik} %Twierdzenie o ciągach przenikających się
 Niech dane będą trzy ciągi liczb rzeczywistych $(x_n), (y_n)$ oraz $(c_n)$. Jeśli $x_n\to x$ i 
 $y_n\to y$ oraz $c_n=\frac{x_1y_n+\ldots+x_ny_1}{n}$, wówczas $c_n\to xy$.
 \end{przenik}
+
+\begin{lemma} %Granica \sqrt[n]{a_1^n+a_2^n+\cdots+a_n^n
+    Niech $(a_n)$ będzie ograniczonym ciągiem o wyrazach dodatnich, wówczas
+    \begin{equation*}
+        \li{\sqrt[n]{a_1^n+a_2^n+\cdots+a_n^n}}=\sup_n{\set{a_1,a_2,\ldots,a_n}}.
+    \end{equation*}
+\end{lemma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                                             \section{Ćwiczenia 28.10.2022}
@@ -156,6 +249,15 @@ to istnieje granica $\li\frac{x_n}{n}$ i co więcej
         \li\frac{x_n}{n}=\inf\set{\frac{x_n}{n},n\in\N}.
     \end{equation*}
 \end{fekete}
+
+\begin{lemma}
+    Niech $(x_n)$ będzie takim ciągiem, że $x_n\stackrel{n\to\infty}{\longrightarrow}1$ 
+    oraz dany jest ciąg $(b_n)$ taki, że $b_1+b_2+\cdots+b_n\stackrel{n\to\infty}{\longrightarrow}\infty$,
+    wówczas
+    \begin{equation*}
+        \frac{b_1x_1+\cdots+b_n x_n}{b_1+\cdots+b_n}\stackrel{n\to\infty}{\longrightarrow}1.
+    \end{equation*}
+\end{lemma}
 
 %%%%%%%%%%%%%%%
 \end{document}%
